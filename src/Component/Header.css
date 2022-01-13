@@ -1,0 +1,6 @@
+.dropIocn::after {
+  content: "am";
+  line-height: 12px;
+  left: 0px;
+  color: #64ffda;
+}

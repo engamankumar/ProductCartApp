@@ -1,0 +1,24 @@
+.arrow:after {
+  content: "";
+  border-color: black transparent transparent transparent;
+  border-style: solid;
+  border-width: 20px;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  /* bottom: -40px; */
+  top: 10px;
+  left: 20px;
+}
+
+/* { */
+/* height: 10px;
+  width: 10px;
+  margin-left: 30px; */
+/* margin-top: -11px; */
+/* background: red;
+  -moz-transform: rotate(45deg);
+  border-right: 1px solid #000;
+  border-bottom: 1px solid #000; */
+/* border-color: #ff0 transparent transparent transparent;
+} */
