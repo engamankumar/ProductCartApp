@@ -9,7 +9,7 @@ class App extends React.Component {
     super(props)
   }
   componentDidMount() {
-    if (this.props.product.length < 1)
+    if (!this.props.product || this.props.product.product.length <1)
       this.props.getProduct();
   }
   render() {
