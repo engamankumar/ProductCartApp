@@ -1,6 +1,5 @@
-.dropIocn::after {
-  content: "am";
-  line-height: 12px;
-  left: 0px;
-  color: #64ffda;
+
+.headerBox{
+  box-shadow: 0 5px #888888;
+  background-color: #fbfaff; 
 }

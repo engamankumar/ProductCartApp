@@ -1,24 +1,150 @@
-.arrow:after {
-  content: "";
-  border-color: black transparent transparent transparent;
-  border-style: solid;
-  border-width: 20px;
-  width: 10px;
-  height: 10px;
-  position: absolute;
-  /* bottom: -40px; */
-  top: 10px;
-  left: 20px;
+.MuiPopover-paper{
+  background-color: #b2d4dc !important;
 }
 
-/* { */
-/* height: 10px;
-  width: 10px;
-  margin-left: 30px; */
-/* margin-top: -11px; */
-/* background: red;
-  -moz-transform: rotate(45deg);
-  border-right: 1px solid #000;
-  border-bottom: 1px solid #000; */
-/* border-color: #ff0 transparent transparent transparent;
-} */
+.stocklistItemhover{
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px #888888;
+}
+.container {
+  background-color: #b2d4dc !important;
+  width: 98%;
+  float: right;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  position: fixed;
+  z-index: 1;
+}
+.arrow {
+  height: 16px;
+  width: 16px;
+
+  background-color: #b2d4dc;
+  position: absolute;
+}
+
+.arrow--tl {
+  left: 32px;
+  top: 0px;
+  border-left: 1px solid rgba(0, 0, 0, 0.3);
+  border-top: 1px solid rgba(0, 0, 0, 0.3);
+  transform: translate(50%, -50%) rotate(45deg);
+}
+
+.arrow--tc {
+  /* Position at the top center */
+  left: 50%;
+  top: 0px;
+border-color:  transparent transparent black transparent;
+  /* Border */
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.arrow--tr {
+  /* Position at the top right corner */
+  right: 32px;
+  top: 0px;
+
+  /* Border */
+  border-left: 1px solid rgba(0, 0, 0, 0.3);
+  border-top: 1px solid rgba(0, 0, 0, 0.3);
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.arrow--rt {
+  /* Position at the right top corner */
+  right: 0;
+  top: 32px;
+
+  /* Border */
+  border-right: 1px solid rgba(0, 0, 0, 0.3);
+  border-top: 1px solid rgba(0, 0, 0, 0.3);
+  transform: translate(50%, 50%) rotate(45deg);
+}
+
+.arrow--rc {
+  /* Position at the right center */
+  right: 0;
+  top: 50%;
+
+  /* Border */
+  border-right: 1px solid rgba(0, 0, 0, 0.3);
+  border-top: 1px solid rgba(0, 0, 0, 0.3);
+  transform: translate(50%, -50%) rotate(45deg);
+}
+
+.arrow--rb {
+  /* Position at the right bottom corner */
+  bottom: 32px;
+  right: 0;
+
+  /* Border */
+  border-right: 1px solid rgba(0, 0, 0, 0.3);
+  border-top: 1px solid rgba(0, 0, 0, 0.3);
+  transform: translate(50%, -50%) rotate(45deg);
+}
+
+.arrow--bl {
+  /* Position at the bottom left corner */
+  bottom: -16px;
+  left: 32px;
+
+  /* Border */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  border-right: 1px solid rgba(0, 0, 0, 0.3);
+  transform: translate(50%, -50%) rotate(45deg);
+}
+
+.arrow--bc {
+  /* Position at the bottom center */
+  bottom: -16px;
+  left: 50%;
+
+  /* Border */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  border-right: 1px solid rgba(0, 0, 0, 0.3);
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.arrow--br {
+  /* Position at the bottom right corner */
+  bottom: -16px;
+  right: 32px;
+
+  /* Border */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  border-right: 1px solid rgba(0, 0, 0, 0.3);
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.arrow--lt {
+  /* Position at the left top corner */
+  left: 0;
+  top: 32px;
+
+  /* Border */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  border-left: 1px solid rgba(0, 0, 0, 0.3);
+  transform: translate(-50%, 50%) rotate(45deg);
+}
+
+.arrow--lc {
+  /* Position at the left center */
+  left: 0;
+  top: 50%;
+
+  /* Border */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  border-left: 1px solid rgba(0, 0, 0, 0.3);
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.arrow--lb {
+  /* Position at the left bottom corner */
+  bottom: 32px;
+  left: 0;
+
+  /* Border */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  border-left: 1px solid rgba(0, 0, 0, 0.3);
+  transform: translate(-50%, -50%) rotate(45deg);
+}

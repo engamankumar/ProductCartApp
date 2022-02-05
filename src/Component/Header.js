@@ -1,26 +1,46 @@
-import { AppBar, Box, Button, Typography } from "@mui/material";
+import { AppBar, Box, Button, IconButton, Typography } from "@mui/material";
+import { useEffect } from "react"
 import React from "react";
 import PopOver from "./PopOver";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
-// import { styled } from "@mui/material/styles";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-
-export default function Header() {
+import './Header.css'
+export default function Header(props) {
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const ref = React.createRef()
+  const [arrow, setArrow] = React.useState(false);
+  useEffect(() => {
+    const checkIfClickedOutside = e => {
+      if (arrow && ref.current && !ref.current.contains(e.target)) {
+        setArrow(false)
+      }
+    }
+    document.addEventListener("mousedown", checkIfClickedOutside)
+    return () => {
+      document.removeEventListener("mousedown", checkIfClickedOutside)
+    }
+  })
 
   const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
+    setArrow(oldState => !oldState)
   };
 
   const handleClose = () => {
     setAnchorEl(null);
+    setArrow(false);
   };
   const open = Boolean(anchorEl);
   const id = open ? "simple-popover" : undefined;
+  const totalPrice = () => {
+    var price = 0;
+    props.shoppingCart.forEach((item) => price += item.qty * item.price)
+    return price
+  }
   return (
     <Box>
       <AppBar
         position="static"
+        className="headerBox"
         sx={{
           backgroundColor: "white",
           display: "flex",
@@ -30,27 +50,31 @@ export default function Header() {
         }}
       >
         <div>
-          <Typography sx={{ color: "#A9A9A9", fontSize: "1em" }}>
-            $78
+          <Typography sx={{ color: "#4c4c4c", fontSize: "1em" }}>
+            ${totalPrice()}
           </Typography>
           <Button
-            onClick={handleClick}
             className="dropIocn"
-            sx={{ color: "#A9A9A9", height: "10px" }}
+            sx={{ color: "#4c4c4c", height: "10px" }}
           >
-            2 Items
+            {props.shoppingCart.length} Items
             <ArrowDropDownIcon />
           </Button>
-          <PopOver
-            id={id}
-            open={open}
-            anchorEl={anchorEl}
-            onClose={handleClose}
-          />
-        </div>
 
-        <ShoppingCartIcon sx={{ color: "#A9A9A9", fontSize: "30px" }} />
+        </div>
+        <IconButton onClick={handleClick}>
+          <ShoppingCartIcon sx={{ color: "#4c4c4c", fontSize: "30px" }} />
+        </IconButton>
       </AppBar>
+      <PopOver
+        childref={ref}
+        id={id}
+        open={open}
+        anchorEl={anchorEl}
+        onClose={handleClose}
+        arrow={arrow}
+        shoppingCart={props.shoppingCart}
+      />
     </Box>
   );
 }
